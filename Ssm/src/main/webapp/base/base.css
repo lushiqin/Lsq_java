@@ -1,0 +1,64 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:HOVER {
+	background-color: blue;
+}
+
+ul li {
+	list-style: none;
+	display: inline-block;
+}
+
+table {
+	border-collapse: collapse;
+	border: none;
+	text-align: center;
+	margin: auto;
+}
+
+tr {
+	background-color: #00A887;
+}
+
+td {
+	border: solid #000 1px;
+	width: 400px;
+}
+
+h1 {
+	margin: auto;
+	padding: auto;
+	text-align: center;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+
+
+
+
+
+
+
+
+

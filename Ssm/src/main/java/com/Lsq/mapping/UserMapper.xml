@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Lsq.dao.UserMapper">
+	<resultMap id="BaseResultMap" type="com.Lsq.dto.User">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="userName" property="username" jdbcType="VARCHAR" />
+		<result column="userMobi" property="usermobi" jdbcType="VARCHAR" />
+		<result column="userAdde" property="useradde" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, userName, userMobi, userAdde
+	</sql>
+
+	<select id="userList" parameterType="com.Lsq.dto.User" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from user
+	</select>
+
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from user
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from user
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="insert" parameterType="com.Lsq.dto.User" useGeneratedKeys="true" keyProperty="id">
+		insert into user (id, userName, userMobi,
+		userAdde)
+		values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR},
+		#{usermobi,jdbcType=VARCHAR},
+		#{useradde,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.Lsq.dto.User">
+		insert into user
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="username != null">
+				userName,
+			</if>
+			<if test="usermobi != null">
+				userMobi,
+			</if>
+			<if test="useradde != null">
+				userAdde,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="username != null">
+				#{username,jdbcType=VARCHAR},
+			</if>
+			<if test="usermobi != null">
+				#{usermobi,jdbcType=VARCHAR},
+			</if>
+			<if test="useradde != null">
+				#{useradde,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.Lsq.dto.User">
+		update user
+		<set>
+			<if test="username != null">
+				userName = #{username,jdbcType=VARCHAR},
+			</if>
+			<if test="usermobi != null">
+				userMobi = #{usermobi,jdbcType=VARCHAR},
+			</if>
+			<if test="useradde != null">
+				userAdde = #{useradde,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.Lsq.dto.User" >
+		update user
+		set userName = #{username,jdbcType=VARCHAR},
+		userMobi = #{usermobi,jdbcType=VARCHAR},
+		userAdde = #{useradde,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+</mapper>

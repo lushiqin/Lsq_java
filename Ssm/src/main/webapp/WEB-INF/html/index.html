@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>微观世界</title>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src = "base/vue.js"></script>
+<script type="text/javascript" src = "base/layer/layer.js"></script>
+<link rel="stylesheet" type="text/css" href="base/layer/skin/layer.css"/>
+<style type="text/css">
+	ul,li{
+		float:left;
+		padding-right: 30px;
+	}
+</style>
+</head>
+<body>
+	<div class= "" style= "text-align: center;">
+		<h1>终于等到你，还好我没放弃！</h1>
+		<h4><a href = "login" >登陆</a></h4>
+		<ul>
+			<li><a href = "exceloutput" >导出</a></li>
+		</ul>
+	</div>
+	
+	<div>
+		<form action="excelinput" method="post" enctype="multipart/form-data" >
+			<input type = "file" name = "file"/>
+			<input type = "submit"  value = "提交" />
+		</form>
+	</div>
+	
+	<h3><a href = "userlist">userlist</a></h3>
+	<h2><a href = "MemList">用户列表</a></h2>
+	<div>
+		<form action="SearchUser" method = "post">
+			<input type = "text" id = "search" name = "search" />	
+			<input type = "submit" value = "搜索" />	
+		</form>
+	</div>
+	<div>
+		<form action="DeleteUser" method="post">
+			<input type="text" id="search" name="search" /> 
+			<input type="submit" value="删除" />
+		</form>
+	</div>
+	
+	<div style = "margin-left: 5%">
+		<h3 ><button v-on:click="addTest" id = "addTest" >增</button></h3>
+		<h3 ><button v-on:click="delTest" id = "delTest" >删</button></h3>
+		<h3 ><button v-on:click="setTest" id = "setTest" >改</button></h3>
+		<h3 ><button v-on:click="serTest" id = "serTest" >查</button></h3>
+		<h3 ><button v-on:click="funny" id = "funny" >好玩的</button></h3>
+	</div>
+	
+	<h1><a href = "indexLogin" >冒险开始咯.....</a></h1>
+	
+	<script type="text/javascript" src="js/vueTest.js"></script>
+</body>
+</html>

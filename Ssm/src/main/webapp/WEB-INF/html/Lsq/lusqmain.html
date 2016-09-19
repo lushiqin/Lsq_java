@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Java奥妙</title>
+<script type="text/javascript" src="base/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="base/layer/layer.js"></script>
+<script type="text/javascript" src="base/base.js"></script>
+<link href="base/base.css" rel="stylesheet" type="text/css"/>
+<link href="base/layer/skin/layer.css" rel="stylesheet" type="text/css"/>
+<link href="css/main.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+div.v1 {
+	width: 1600px;
+	border: 1px solid red;
+	margin: auto;
+	overflow: hidden;
+	background-color: #eff3f4;
+}
+
+div.v2 {
+	width: 398px;
+	height: 400px;
+	float: left;
+	border: 1px solid red;
+	overflow: auto;
+}
+</style>
+</head>
+<body>
+	<div class="v1">
+		<h1>Java奥妙</h1>
+		<div>
+			<div class="v2">
+				<input type = "text" id = "sertext" style = "width: 60px" placeholder="修改的ID"/>
+				<a href="javascript:void();" onclick="userser()">查询</a>
+				<a href="javascript:void();" onclick="userupd()">修改</a>
+				<a href="javascript:void();" onclick="userdel()">删除</a>
+				<a href="javascript:void();" onclick="userIns()">新增</a>
+				<a href="javascript:void();" onclick="docImport()">导入</a>
+				<a href="docExport" >导出</a>
+				<table>
+					<thead>
+						<tr>
+							<td>编号</td>
+							<td>姓名</td>
+							<td>手机</td>
+							<td>地址</td>
+						</tr>
+					</thead>
+					<tbody id = "tbody">
+					</tbody>
+				</table>
+			</div>
+			<div class="v2">
+				<ul class="nav">
+				</ul>
+				<div class = "navmsgs hide">
+					<div>
+						<label>手机：</label>
+						<span id = "mobi"></span>
+					</div>
+					<div>
+						<label>地址：</label>
+						<span id = "addr"></span>
+					</div>
+				</div>
+			</div>
+			<div class="v2">
+				<div class = "imgbox">
+					<div class = "banner">
+						<img alt="banner1" src="img/banner1.png">
+						<img alt="banner2" src="img/banner2.png">
+					</div>
+				</div>
+				<div class = "change">
+					<span class = "num">change</span>
+				</div>
+			</div>
+			<div class="v2"></div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="js/Lsq/lusqmain.js"></script>
+	<script type="text/javascript" src="js/Lsq/div2.js"></script>
+</body>
+</html>

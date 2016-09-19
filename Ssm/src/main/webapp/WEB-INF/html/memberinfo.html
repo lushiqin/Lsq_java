@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>会员信息</title>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src = "base/vue.js"></script>
+<script type="text/javascript" src = "base/layer/layer.js"></script>
+<link rel="stylesheet" type="text/css" href="base/layer/skin/layer.css"/>
+</head>
+<body>
+	<div style = "text-align: center;">
+		<form action="#" id = "memberinfo">
+			<div style = "margin-bottom: 2%">
+				<label>姓名:</label>
+				<input type = "text" id = "username" name = "username" />
+			</div>
+			<div style = "margin-bottom: 2%">
+				<label>手机:</label>
+				<input type = "text" id = "usermobi" name = "usermobi" />
+			</div>
+			<div style = "margin-bottom: 2%">
+				<label>地址:</label>
+				<input type = "text" id = "useradde" name = "useradde" />
+			</div>
+		</form>
+	</div>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<td>编号</td>
+					<td>姓名</td>
+					<td>手机</td>
+					<td>地址</td>
+				</tr>
+			</thead>
+			<tbody id = "tbody">
+			</tbody>
+		</table>
+	</div>
+	
+	<script type="text/javascript" src = "js/memberinfo.js"></script>
+</body>
+</html>
