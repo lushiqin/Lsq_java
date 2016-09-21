@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Lus.dao.UserDao">
+	<resultMap type="com.Lus.model.User" id="BaseResultMap">
+		<id column="userId" property="userId" jdbcType="INTEGER" />
+		<result column="userName" property="userName" jdbcType="VARCHAR" />
+		<result column="userMobi" property="userMobi" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="userList" resultMap="BaseResultMap">
+		select userId,userName,userMobi from user
+	</select>
+
+	<select id="userSelect" resultMap="BaseResultMap">
+		select userId,userName,userMobi from user where
+		userId = #{userId}
+	</select>
+
+	<insert id="userInsert" parameterType="com.Lus.model.User"
+		useGeneratedKeys="true" keyProperty="userId">
+		insert into
+		user(userId,userName,userMobi)
+		value(#{userId,jdbcType=INTEGER},#{userName,jdbcType=VARCHAR},#{userMobi,jdbcType=VARCHAR})
+	</insert>
+
+	<update id="userUpdate" parameterType="com.Lus.model.User"
+		useGeneratedKeys="true" keyProperty="userId">
+		update user
+		<set>
+			<if test="userName != null">
+				userName = #{userName,jdbcType=VARCHAR},
+			</if>
+			<if test="userMobi != null">
+				userMobi = #{userMobi,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where userId = #{userId,jdbcType=INTEGER}
+	</update>
+
+	<delete id="userDelete" parameterType="com.Lus.model.User" >
+		delete from user where userId = #{userId}
+	</delete>
+</mapper>
